@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang=es>
+    <head>
+        <meta charset="utf-8">
+        <title>Desarrollo de Interfaces - Actividad 1 - Carrito de la Compra</title>
+        <meta name="viewport" content="width=devide-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="codigo.js"></script> 
+    </head>
+    <body>
+        <form name="formulario">
+          <fieldset>
+            <p>Nombre artículo: <input type="text" name="articulo" size="40"><span id="faltaArticulo" style="display:none">falta artículo</span></p>
+            <p>Precio artículo: <input type="text" name="precio" size="40"><span id="faltaPrecio" style="display:none">falta precio</span><span id="precioIncorrecto" style="display:none">tipo de dato incorrecto</span></p>
+            <p>Unidades: <input type="number" name="unidades" min="1" value="1" size="5">
+            <p><input type="button" name="botonAddArticulo" value="Añadir al carrito"></p>
+          </fieldset>
+          <fieldset>
+            <p>Artículos del carrito: <input type="text" name="lista" size="100" readonly="readonly"></p>
+            <p>Precio total del carrito: <input type="text" name="total" size="10" placeholder="0" readonly="readonly"></p>
+            <p>Forma de pago: 
+              <select name="fPago">
+                <option value="seleccione" selected disabled hidden>--Seleccione--</option> //Para que se muestre por defecto, no sea seleccionable y no aparezca
+                <option value="tarjeta">Tarjeta</option>
+                <option value="efectivo">Efectivo</option>
+              </select>
+              <div id="capaTarjeta" style="display:none">
+                Titular tarjeta: <input type="text" name="titular">
+                Número tarjeta: <input type="text" name="numTarjeta">
+                CVV: <input type="text" name="cvv">
+              </div>
+              <div id="capaEfectivo" style="display:none">
+                Importe Efectivo: <input type="text" name="importe">
+              </div>
+            </p>
+          </fieldset>
+          <fieldset>
+            <p>
+              <input type="checkbox" name="aceptar" value="acepto">
+              <label for="aceptar">Acepto las condiciones de compra</label>
+            </p>
+            <p><input type="button" name="botonImprimir" value="Imprimir" disabled> <input type="reset" name="botonRestablecer" value="Restablecer"> </p>
+          </fieldset>
+        </form>
+    </body>
+</html>
