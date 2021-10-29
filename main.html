@@ -8,13 +8,19 @@
         <script type="text/javascript" src="codigo.js"></script> 
     </head>
     <body>
+      <div>
+        <span class=imageBanner><img class=imageBanner src=res/carrito.png/></span><span class=tituloBanner>Carrito de la compra</span>
+        <br class="clearBoth"/>
+      </div>
+      <div class="clearBoth">
         <form name="formulario">
           <fieldset>
             <p>Nombre artículo: <input type="text" name="articulo" size="40"><span id="faltaArticulo" style="display:none">falta artículo</span></p>
             <p>Precio artículo: <input type="text" name="precio" size="40"><span id="faltaPrecio" style="display:none">falta precio</span><span id="precioIncorrecto" style="display:none">tipo de dato incorrecto</span></p>
             <p>Unidades: <input type="number" name="unidades" min="1" value="1" size="5">
-            <p><input type="button" name="botonAddArticulo" value="Añadir al carrito"></p>
+            <p><input class="button" type="button" name="botonAddArticulo" value="Añadir al carrito"></p>
           </fieldset>
+          <br/> 
           <fieldset>
             <p>Artículos del carrito: <input type="text" name="lista" size="100" readonly="readonly"></p>
             <p>Precio total del carrito: <input type="text" name="total" size="10" placeholder="0" readonly="readonly"></p>
@@ -25,22 +31,28 @@
                 <option value="efectivo">Efectivo</option>
               </select>
               <div id="capaTarjeta" style="display:none">
-                Titular tarjeta: <input type="text" name="titular">
-                Número tarjeta: <input type="text" name="numTarjeta">
-                CVV: <input type="text" name="cvv">
+                <p>
+                  <label for="titular">Titular tarjeta: </label><input type="text" name="titular">
+                  <label for="numTarjetar">Número tarjeta: </label><input type="text" name="numTarjeta">
+                  <label for="cvv">CVV: </label><input type="text" name="cvv">
+                </p>
               </div>
               <div id="capaEfectivo" style="display:none">
-                Importe Efectivo: <input type="text" name="importe">
+                <p>
+                  <label for="importe">Importe Efectivo: </label><input type="text" name="importe">
+                </p>
               </div>
             </p>
           </fieldset>
+          <br/>
           <fieldset>
             <p>
               <input type="checkbox" name="aceptar" value="acepto">
               <label for="aceptar">Acepto las condiciones de compra</label>
             </p>
-            <p><input type="button" name="botonImprimir" value="Imprimir" disabled> <input type="reset" name="botonRestablecer" value="Restablecer"> </p>
+            <p><input class="button" type="button" name="botonImprimir" value="Imprimir" disabled> <input class="button" type="reset" name="botonRestablecer" value="Restablecer"> </p>
           </fieldset>
         </form>
+      </div>
     </body>
 </html>

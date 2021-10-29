@@ -1,0 +1,106 @@
+/*******/
+/* CSS */
+/*******/
+
+* {
+    margin: 0px;
+    border: 0px;
+}
+
+/* Propiedades para la etiqueta body */
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #263238;
+    background-image: url("res/VecteezyYellow-Background-2RD0421-01_generated.jpg");
+    background-position: top;    
+}
+
+/* Propiedades para las etiquetas div */
+div {
+    border: 0.5em solid #000;
+    margin: 10px;
+    border-radius: 1em;
+}
+
+/* Propiedades para la clase imgBanner*/
+.imageBanner {
+    float: left;
+    position: relative;
+    height: 244px;
+    width: 300px;
+}
+
+/* Propiedades de la clase tituloBanner */
+.tituloBanner{
+    float: left;
+    position: relative;
+    font-size: 80px;
+}
+
+/* Propiedades de la clase clearBoth (Para volver a block después de float)*/
+.clearBoth { 
+    clear:both;
+    display: block; 
+}
+
+/* Propiedades para el identificador capaTarjeta */
+#capaTarjeta {
+    border: 0.2em solid rgb(255, 230, 0);
+    border-radius: 1em;
+    padding: 0.2em;
+}
+
+/* Propiedades para el identificador capaEfectivo */
+#capaEfectivo {
+    border: 0.2em solid rgb(255, 230, 0);
+    border-radius: 1em;
+    padding: 0.2em;
+}
+
+/* Propiedades para las etiquetas form */
+form {
+    border: 0.2em solid rgb(255, 150, 0);
+    border-radius: 1em;
+}
+
+/* Propiedades para las etiquetas fieldset */
+fieldset {
+    border: 0.2em solid rgb(255, 230, 0);
+    border-radius: 1em;
+}
+
+/* Propiedades para las etiquetas p */
+p {
+    font-size: 1.2em;
+    text-align: justify;
+}
+
+/* Propiedades para las etiquetas input */
+input {
+    font-size: 0.8em;
+    padding: 0.2em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-right: 0.5em;
+    background-color: rgba(255, 230, 0, 0.75);
+    border-radius: 0.5em;
+}
+
+/* Propiedades adicionales para los input de clase "button"*/
+input.button {
+    padding: 0.4em;
+    border: 0.2em solid #fff;
+    background-color: rgb(255, 150, 0);
+}
+
+/*Propiedades para la etiqueta select*/
+select {
+    font-size: 0.8em;
+    background-color: rgba(255, 230, 0, 0.75);
+}
+
+/*Propiedades para la etiqueta label*/
+label {
+    padding: 0.2em;
+}
+
