@@ -1,6 +1,8 @@
 /**
  * JS para Carrito de la compra
- *  
+ * 
+ * Repositorio del proyecto: https://github.com/bokdelajungla/DdI_A1_Carrito
+ *   
  */
 
 /* Variables */
