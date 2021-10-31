@@ -1,7 +1,5 @@
 /**
  * JS para Carrito de la compra
- * 
- * @author Jorge
  *  
  */
 
