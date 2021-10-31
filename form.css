@@ -1,0 +1,157 @@
+@charset "UTF-8";
+* {
+    font-size: 24px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: #1E2539;
+}
+body {
+    background-color: #FFFFFF;
+    
+}
+header, footer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 80%;
+    height: 8rem;
+    background-color: #119ABF;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5rem;
+    padding: 0.8rem;
+    box-shadow: 2px 2px 15px 1px #1E2539;
+}
+footer > div > ul > li {
+    list-style: none;
+    color: #f4fcff;
+}
+li:hover {
+    color: #1E2539;
+}
+img {
+    width: 8rem;
+}
+h1 {
+    color: #FFFFFF;
+    margin-top: 0px;
+    text-shadow: 2px 2px 0.3rem #FF8181;
+    font-size: 5.5rem;
+}
+a {
+    margin: 0.1rem;
+}
+a:hover {
+    cursor: pointer;
+}
+a:hover svg {
+    fill: #FF8181;
+}
+form {
+    margin: auto;
+    margin-bottom: 1.5rem;
+    width: 80%;
+    padding: 0.8rem;
+    background-color: #FFFFFF;
+    box-shadow: 2px 2px 15px 1px #1E2539;
+    gap: 2rem;
+}
+form > * {
+    margin: 0.2rem;
+}
+input[type="text"], input[type="number"] {
+    margin: 0.4rem;
+    padding: 0.2rem;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+    background-color: #f4fcff;
+    color: #119ABF;
+}
+input[type="button"] {
+    margin: 0.8rem;
+    padding: 0.2rem;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+    background-color: #FFFFFF;
+    border: 2px solid #DE3F00;
+    color: #DE3F00;
+    cursor: pointer;
+}
+label {
+    margin-left: 0.4rem;
+    margin-right: 0.4rem;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+    border-left: 0.3rem solid #119ABF;
+}
+label:hover {
+    background-color: #119ABF;
+    color: #FFFFFF;
+}
+input[type="checkbox"] {
+    margin-left: 0.4rem;
+}
+#no_border {
+    border-left: none;
+}
+#no_border:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+select {
+    margin-left: 0.4rem;
+    margin-right: 0.4rem;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+    background-color: #f4fcff;
+    color: #119ABF;
+}
+option {
+    color: #119ABF;
+}
+hr {
+    margin: 01rem;
+    border: 1px solid #ffffff;
+    box-shadow: 1px 1px 2px #6d6d6d;
+}
+
+/* DISEÑOS RESPONSIBLE */
+
+@media (min-width: 1025px) and (max-width: 1280px) { 
+    * {
+        font-size: 22px;
+    }
+    #page {
+        width: 840px;
+    }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+    * {
+        font-size: 20px;
+    }
+    #page {
+        width: 600px;
+    }
+}
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    * {
+        font-size: 16px;
+    }
+    #page {
+        width: 600px;
+    }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+    * {
+        font-size: 14px;
+    }
+    #page {
+        width: 350px;
+    }
+}
+@media (min-width: 320px) and (max-width: 480px) {
+    * {
+        font-size: 12px;
+    }
+    #page {
+        width: 300px;
+    }
+}
