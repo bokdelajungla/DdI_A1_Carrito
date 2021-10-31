@@ -190,7 +190,7 @@ function imprimir(){
             "\nForma de pago: "+fPago.value);
     }
     else{
-        alert("Seleccione uns forma de pago");
+        alert("Seleccione una forma de pago");
     }
 }
 
