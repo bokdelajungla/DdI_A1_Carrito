@@ -47,6 +47,7 @@ function inicializar(){
     titular=document.formulario.titular;
     numTarjeta=document.formulario.numTarjeta;
     cvv=document.formulario.cvv;
+    cvv.style.size="3";
     importe=document.formulario.importe;
 
     aceptar=document.formulario.aceptar;
@@ -114,20 +115,23 @@ function addArticulo(){
         unidades.value = "1";
         articulo.focus();
     }
-    //Si el artículo está vacío
-    else if(articulo.value===""){
-        faltaArticulo.style.display="inline";
-        articulo.focus();
-    }
-    //Si falta el precio
-    else if(precio.value===""){
-        precio.focus();
-        faltaPrecio.style.display="inline";
-    }
-    //En caso de el precio sea incorrecto
     else{
-        precioIncorrecto.style.display="inline";
-        precio.focus();
+        //Si falta el precio
+        if(precio.value===""){
+            precio.focus();
+            faltaPrecio.style.display="inline";
+        }
+        //En caso de el precio sea incorrecto
+        else{
+            precioIncorrecto.style.display="inline";
+            precio.focus();
+        }
+        //Si el artículo está vacío
+        if(articulo.value===""){
+            faltaArticulo.style.display="inline";
+            articulo.focus();
+        }
+        
     }
 }
 
