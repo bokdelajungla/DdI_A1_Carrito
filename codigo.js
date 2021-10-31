@@ -1,3 +1,11 @@
+/**
+ * JS para Carrito de la compra
+ * 
+ * @author Jorge
+ *  
+ */
+
+/* Variables */
 var articulo;
 var precio;
 var unidades;
@@ -14,11 +22,17 @@ var importe;
 var aceptar;
 var botonImprimir;
 
+/* Ejecución al cargar la página */
 window.onload=function(){
     inicializar();
     setManejadorEventos();
 }
 
+/**
+ * Función que inicializa las variables a sus correspondientes valores
+ * y fija la visibilidad inicial de los elementos
+ * 
+ */
 function inicializar(){
     //Variables
     articulo=document.formulario.articulo;
@@ -48,16 +62,30 @@ function inicializar(){
     
 }
 
+/**
+ * Función que asigna los escuchadores a los elementos interactivos
+ * 
+ */
 function setManejadorEventos(){
     document.formulario.botonAddArticulo.addEventListener("click", addArticulo);
     fPago.addEventListener("change", cargarPago);
     aceptar.addEventListener("change", haAceptado);
     document.formulario.botonImprimir.addEventListener("click", imprimir);
     document.formulario.botonRestablecer.addEventListener("click", restablecer)
+
+    //Para método pago tarjeta
+    titular.addEventListener("blur", validarTarjeta);
+    numTarjeta.addEventListener("blur", validarTarjeta);
+    cvv.addEventListener("blur", validarTarjeta);
 }
 
+/**
+ * Función para añadir un artículo a la lista del carrito
+ * 
+ */
 function addArticulo(){
     //Visibilidad
+    //Reiniciamos la visibilidad a su estado inicial
     faltaPrecio.style.display="none";
     faltaArticulo.style.display="none";
     precioIncorrecto.style.display="none";
@@ -103,10 +131,11 @@ function addArticulo(){
     }
 }
 
-/*
-Compueba el precio. Si parseFloat devuelve un numero entonces devuelve "true"
-Si no devuelve "false"
-*/  
+/**
+ * Compueba el precio. Si parseFloat devuelve un numero entonces devuelve "true"
+ * Si no devuelve "false"
+ * 
+ */ 
 function validarPrecio(valor){
     if(isNaN(parseFloat(precio.value))){
         return false;
@@ -166,15 +195,57 @@ Resetea los campos del formulario y hace focus al articulo
 */
 function restablecer(){
 
+    //Hacer foco Artículo
     articulo.focus();
-    //No podemos emplear la función porque se ejecuta antes de que el formulario se resetee
-    //cargarPago(),1000);
+    //Volvemos a la visibilidad por defecto
     capaTarjeta.style.display="none";
     capaEfectivo.style.display="none";
     faltaPrecio.style.display="none";
     faltaArticulo.style.display="none";
     precioIncorrecto.style.display="none";
     //total.value = "0"; //No hace falta porque ya se resetea por el formulario
+    //Desactivar el botón Imprimir 
     botonImprimir.disabled = true;
 }
 
+function validarTarjeta(){
+    //Flag de Error
+    var error = false;
+    //Comprobar que el Titular tiene forma de nombre
+    //Empieza por palabra de 3 o más letras, seguido de espacio y otra palabra
+    if(!titular.value.match(/^(\w{3,})\s?(\w{3,})/)){
+        falloTarjeta.style.display="block";
+        titular.className = "error";
+        error=true;
+    }
+    else{ //Si Titular está correcto
+        titular.className = "";
+        errorTitular.style.display="none";
+    } 
+    //Comprobar que el numTarjeta contiene exactamente 16 dígitos
+    if(!numTarjeta.value.match(/^\d{16}$/)){
+        falloTarjeta.style.display="block";
+        numTarjeta.className = "error";
+        error=true;
+    }
+    else{ //Si Num Tarjeta está correcto
+        numTarjeta.className = "";
+        errorNumTarjeta.style.display="none";
+    }
+    //Comprobar que el CVV tiene 3 dígitos
+    if(!cvv.value.match(/^\d{3}$/)){
+        falloTarjeta.style.display="block";
+        cvv.className = "error";
+        error=true;
+    }
+    else{ //Si CVV está correcto
+        cvv.className = "";
+        errorCvv.style.display="none";
+    }
+    
+    //Si ninguno ha dado error, ocultamos el span
+    if(!error){
+        falloTarjeta.style.display="none";        
+    }
+
+}
