@@ -208,6 +208,10 @@ function restablecer(){
     botonImprimir.disabled = true;
 }
 
+/**
+ * Valida los campos que aparecen al seleccionar el método de pago tarjeta
+ * 
+ */
 function validarTarjeta(){
     //Flag de Error
     var error = false;
